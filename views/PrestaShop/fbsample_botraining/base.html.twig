@@ -1,0 +1,55 @@
+{#*
+ * 2007-2019 Frédéric BENOIST
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ *  @author    Frédéric BENOIST
+ *  @copyright 2013-2019 Frédéric BENOIST <https://www.fbenoist.com/>
+ *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ *#}
+{% extends(template_from_string(
+    getLegacyLayout(
+        app.request.attributes.get('_legacy_controller'),
+        layoutTitle is defined ? layoutTitle : 'FbSample BO Controller',
+        layoutHeaderToolbarBtn is defined ? layoutHeaderToolbarBtn : [],
+        layoutDisplayType is defined ? layoutDisplayType : 'FbSample BO Controller',
+        showContentHeader is defined ? showContentHeader : true,
+        headerTabContent is defined ? headerTabContent : '',
+        enableSidebar is defined ? enableSidebar : false,
+        help_link is defined ? help_link : ''
+    )
+)) %}
+
+{% block content_header %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                {% for flash_message in app.session.flashbag.get('notice') %}
+                    <div class="alert alert-success">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% for flash_message in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger">
+                        {{ flash_message }}
+                    </div>
+                {% endfor %}
+
+                {% block body %}
+                    BoTraining module base template
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
