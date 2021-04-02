@@ -1,3 +1,2 @@
-*.xml
 composer.lock
 /vendor/
