@@ -21,8 +21,8 @@ parameters:
 
 services:
     _defaults:
-        autowire: true
-        autoconfigure: true
+        autowire: false
+        autoconfigure: false
 
     mycommand:
         class: FBenoist\FbSample_BoTraining\Command\MyCommand

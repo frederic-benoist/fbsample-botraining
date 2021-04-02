@@ -38,7 +38,7 @@ class FbSample_BoTraining extends Module
             'max' => _PS_VERSION_
         );
         parent::__construct();
-        $this->displayName = $this->l('Training Module');
+        $this->displayName = $this->l('BO Training Module');
         $this->description = $this->l('PrestaShop 1.7 Back Office training module');
     }
 

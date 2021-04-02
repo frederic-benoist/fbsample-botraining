@@ -22,4 +22,6 @@ fbsample_botraining_index:
     methods:  [GET]
     defaults:
         _controller: 'FBenoist\FbSample_BoTraining\Controller\IndexController::indexAction'
+        _legacy_controller: 'AdminBoTrainingIndexControllerLegacyClass'
+        _legacy_link: 'AdminBoTrainingIndexControllerLegacyClass'
 
